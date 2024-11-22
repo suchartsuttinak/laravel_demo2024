@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BackOfficeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductTypeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\EnsureTokenIsValid;
 
@@ -39,6 +40,15 @@ Route::get('/product-pricebetween', [ProductController::class, 'priceBetween']);
 Route::get('/product-notbetween', [ProductController::class, 'priceNotBetween']);
 Route::get('/product-pricein', [ProductController::class, 'priceIn']);
 Route::get('/product-max-min-count-avg', [ProductController::class, 'priceMaxMinCountAvg']);
+
+
+//productType List
+Route::get('/product-type-list', [ProductController::class, 'productTypeList']);
+Route::get('/list-by-product-type/{productTypeId}', [ProductController::class, 'listByProductType']);
+
+//livewire
+Route::get('/product-type/list', [ProductTypeController::class, 'index']);
+
 
 
 //User Show
